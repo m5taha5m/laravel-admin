@@ -5,7 +5,17 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name'  => 'Laravel-admin',
+    'name'      => 'Laravel-admin',
+
+    /*
+     * Logo in admin panel header.
+     */
+    'logo'      => '<b>Laravel</b> admin',
+
+    /*
+     * Mini-logo in admin panel header.
+     */
+    'logo-mini' => '<b>La</b>',
 
     /*
      * Laravel-admin url prefix.
@@ -19,7 +29,7 @@ return [
     'directory' => app_path('Admin'),
 
     /*
-     * Laravel-admin title.
+     * Laravel-admin html title.
      */
     'title'  => 'Admin',
 
@@ -80,6 +90,11 @@ return [
     ],
 
     /*
+     * By setting this option to open or close operation log in laravel-admin.
+     */
+    'operation_log'   => true,
+
+    /*
     |---------------------------------------------------------|
     | SKINS         | skin-blue                               |
     |               | skin-black                              |
@@ -102,5 +117,8 @@ return [
      */
     'layout'  => ['sidebar-mini'],
 
+    /*
+     * Version displayed in footer.
+     */
     'version'   => '1.0',
 ];
