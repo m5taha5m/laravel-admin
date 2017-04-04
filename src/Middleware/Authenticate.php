@@ -19,7 +19,7 @@ class Authenticate
     public function handle($request, Closure $next)
     {
         if (Auth::guard('admin')->guest() && !$this->shouldPassThrough($request)) {
-            return redirect()->guest(Admin::url('auth/login'));
+            return redirect()->route(config('admin.route-group-name').'.login');
         }
 
         return $next($request);
@@ -35,8 +35,8 @@ class Authenticate
     protected function shouldPassThrough($request)
     {
         $excepts = [
-            Admin::url('auth/login'),
-            Admin::url('auth/logout'),
+            Route(config('admin.route-group-name').'.login'),
+            Route(config('admin.route-group-name').'.logout')
         ];
 
         foreach ($excepts as $except) {
@@ -44,7 +44,7 @@ class Authenticate
                 $except = trim($except, '/');
             }
 
-            if ($request->is($except)) {
+            if ($request->fullUrlIs($except)) {
                 return true;
             }
         }

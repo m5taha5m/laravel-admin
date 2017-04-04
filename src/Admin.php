@@ -108,10 +108,7 @@ class Admin
     {
         $directory = config('admin.directory');
 
-        return ltrim(implode('\\',
-              array_map('ucfirst',
-                  explode(DIRECTORY_SEPARATOR, str_replace(app()->basePath(), '', $directory)))), '\\')
-              .'\\Controllers';
+        return ltrim(implode('\\', array_map('ucfirst', explode(DIRECTORY_SEPARATOR, str_replace(app()->basePath(), '', $directory)))), '\\').'\\Controllers';
     }
 
     /**
@@ -183,13 +180,13 @@ class Admin
      */
     public static function url($url)
     {
-        $prefix = trim(config('admin.base-url-prefix'), '/').'/'.trim(config('admin.prefix'), '/');
+        $prefix = trim(config('admin.prefix'), '/');
 
         if (empty($prefix) || $prefix == '/') {
             return '/'.trim($url, '/');
         }
 
-        return "/$prefix/".trim($url, '/');
+        return url("/$prefix/".trim($url, '/'));
     }
 
     /**
@@ -252,25 +249,26 @@ class Admin
             'prefix'        => config('admin.prefix'),
             'namespace'     => 'Encore\Admin\Controllers',
             'middleware'    => ['web', 'admin'],
+            'as'            => config('admin.route-group-name').'.',
         ];
 
         Route::group($attributes, function ($router) {
-            $attributes = ['middleware' => 'admin.permission:allow,administrator'];
+            $router->group(['prefix' => 'auth'], function ($router) {
+                /* @var \Illuminate\Routing\Router $router */
+                $router->group(['middleware' => 'admin.permission:allow,administrator'], function ($router) {
+                    $router->resource('users', 'UserController');
+                    $router->resource('roles', 'RoleController');
+                    $router->resource('permissions', 'PermissionController');
+                    $router->resource('menu', 'MenuController', ['except' => ['create']]);
+                    $router->resource('logs', 'LogController', ['only' => ['index', 'destroy']]);
+                });
 
-            /* @var \Illuminate\Routing\Router $router */
-            $router->group($attributes, function ($router) {
-                $router->resource('auth/users', 'UserController');
-                $router->resource('auth/roles', 'RoleController');
-                $router->resource('auth/permissions', 'PermissionController');
-                $router->resource('auth/menu', 'MenuController', ['except' => ['create']]);
-                $router->resource('auth/logs', 'LogController', ['only' => ['index', 'destroy']]);
+                $router->get('login', 'AuthController@getLogin')->name('login');
+                $router->post('login', 'AuthController@postLogin');
+                $router->get('logout', 'AuthController@getLogout')->name('logout');
+                $router->get('setting', 'AuthController@getSetting');
+                $router->put('setting', 'AuthController@putSetting');
             });
-
-            $router->get('auth/login', 'AuthController@getLogin');
-            $router->post('auth/login', 'AuthController@postLogin');
-            $router->get('auth/logout', 'AuthController@getLogout');
-            $router->get('auth/setting', 'AuthController@getSetting');
-            $router->put('auth/setting', 'AuthController@putSetting');
         });
     }
 
