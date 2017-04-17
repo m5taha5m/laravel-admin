@@ -58,6 +58,7 @@
 <script src="{{ asset ("/packages/admin/nestable/jquery.nestable.js") }}"></script>
 <script src="{{ asset ("/packages/admin/toastr/build/toastr.min.js") }}"></script>
 <script src="{{ asset ("/packages/admin/bootstrap3-editable/js/bootstrap-editable.min.js") }}"></script>
+<script src="{{ asset ("/packages/admin/clipboard/clipboard.min.js") }}"></script>
 
 {!! Admin::js() !!}
 
