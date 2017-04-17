@@ -17,7 +17,7 @@ class Image extends AbstractDisplayer
                 $src = $path;
             } else {
                 $server = $server ?: config('admin.upload.host');
-                $src = trim($server, '/').'/'.trim($path, '/');
+                $src = url(trim($server, '/').'/'.trim($path, '/'));
             }
 
             return "<img src='$src' style='max-width:{$width}px;max-height:{$height}px' class='img img-thumbnail' />";

@@ -47,14 +47,14 @@ return [
      */
     'upload'  => [
 
-        'disk' => 'admin',
+        'disk' => 'public',
 
         'directory'  => [
             'image'  => 'image',
             'file'   => 'file',
         ],
 
-        'host' => 'http://localhost:8000/upload/',
+        'host' => '/storage/',
     ],
 
     /*
