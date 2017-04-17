@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Extensions\Column;
+namespace Encore\Admin\Grid\Displayers;
 
 use Encore\Admin\Admin;
 use Encore\Admin\Grid\Displayers\AbstractDisplayer;
