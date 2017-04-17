@@ -894,7 +894,7 @@ class Grid
             'radio'         => \Encore\Admin\Grid\Displayers\Radio::class,
             'checkbox'      => \Encore\Admin\Grid\Displayers\Checkbox::class,
             'orderable'     => \Encore\Admin\Grid\Displayers\Orderable::class,
-            'expanRow'     => \Encore\Admin\Grid\Displayers\ExpandRow::class,
+            'expandRow'     => \Encore\Admin\Grid\Displayers\ExpandRow::class,
             'openMap'      => \Encore\Admin\Grid\Displayers\OpenMap::class,
             'floatBar'     => \Encore\Admin\Grid\Displayers\FloatBar::class,
             'urlWrapper'   => \Encore\Admin\Grid\Displayers\UrlWrapper::class,
