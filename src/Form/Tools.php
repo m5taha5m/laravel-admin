@@ -27,8 +27,9 @@ class Tools implements Renderable
      * @var array
      */
     protected $options = [
-        'enableListButton' => true,
-        'enableBackButton' => true,
+        'enableListButton'   => true,
+        'enableBackButton'   => true,
+        'enableDeleteButton' => false,
     ];
 
     /**
@@ -81,6 +82,50 @@ EOT;
     }
 
     /**
+     * Built delete button.
+     *
+     * @return string
+     */
+    protected function deleteButton()
+    {
+        $slice = Str::contains($this->form->getResource(0), '/edit') ? null : -1;
+        $resource = $this->form->getResource($slice);
+
+        $confirm = trans('admin::lang.delete_confirm');
+        $text = trans('admin::lang.delete');
+
+        $script = <<<SCRIPT
+
+$('.form-delete-btn').unbind('click').click(function() {
+    if(confirm("{$confirm}")) {
+        $.ajax({
+            method: 'post',
+            url: '{$resource}/' + $(this).data('id'),
+            data: {
+                _method:'delete',
+                _token:LA.token,
+            },
+            success: function (data) {
+                window.location = '{$resource}';
+            }
+        });
+    }
+});
+
+SCRIPT;
+
+        Admin::script($script);
+
+        return <<<EOT
+<div class="btn-group pull-right" style="margin-right: 10px">
+    <a href="javascript:void(0);" data-id="{$this->form->getResourceId()}" class="btn btn-sm btn-danger form-delete-btn">
+        <i class="fa fa-trash"></i>&nbsp;$text
+    </a>
+</div>
+EOT;
+    }
+
+    /**
      * Prepend a tool.
      *
      * @param string $tool
@@ -119,12 +164,28 @@ EOT;
     }
 
     /**
+     * Enable delete button.
+     *
+     * @return $this
+     */
+    public function enableDeleteButton()
+    {
+        $this->options['enableDeleteButton'] = true;
+
+        return $this;
+    }
+
+    /**
      * Render header tools bar.
      *
      * @return string
      */
     public function render()
     {
+        if ($this->options['enableDeleteButton']) {
+            $this->add($this->deleteButton());
+        }
+
         if ($this->options['enableListButton']) {
             $this->add($this->listButton());
         }

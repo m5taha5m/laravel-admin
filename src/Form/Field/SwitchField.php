@@ -17,6 +17,7 @@ class SwitchField extends Field
     protected $states = [
         'on'  => ['value' => 1, 'text' => 'ON', 'color' => 'primary'],
         'off' => ['value' => 0, 'text' => 'OFF', 'color' => 'default'],
+        'label' => '',
     ];
 
     public function states($states = [])
@@ -52,6 +53,7 @@ $('{$this->getElementClassSelector()}.la_checkbox').bootstrapSwitch({
     size:'small',
     onText: '{$this->states['on']['text']}',
     offText: '{$this->states['off']['text']}',
+    labelText: '{$this->states['label']}',
     onColor: '{$this->states['on']['color']}',
     offColor: '{$this->states['off']['color']}',
     onSwitchChange: function(event, state) {

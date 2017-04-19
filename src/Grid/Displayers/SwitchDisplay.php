@@ -9,6 +9,7 @@ class SwitchDisplay extends AbstractDisplayer
     protected $states = [
         'on'  => ['value' => 1, 'text' => 'ON', 'color' => 'primary'],
         'off' => ['value' => 0, 'text' => 'OFF', 'color' => 'default'],
+        'label' => '',
     ];
 
     protected function updateStates($states)
@@ -32,6 +33,7 @@ $('.$class').bootstrapSwitch({
     size:'mini',
     onText: '{$this->states['on']['text']}',
     offText: '{$this->states['off']['text']}',
+    labelText: '{$this->states['label']}',
     onColor: '{$this->states['on']['color']}',
     offColor: '{$this->states['off']['color']}',
     onSwitchChange: function(event, state){

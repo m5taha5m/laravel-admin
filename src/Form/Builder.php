@@ -154,6 +154,18 @@ class Builder
     }
 
     /**
+     * Get resource Id.
+     *
+     * @param $id
+     *
+     * @return void
+     */
+    public function getResourceId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @return string
      */
     public function getResource($slice = null)
