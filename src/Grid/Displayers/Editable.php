@@ -36,6 +36,48 @@ class Editable extends AbstractDisplayer
     }
 
     /**
+     * Password type editable.
+     */
+    public function password()
+    {
+    }
+
+    /**
+     * Email type editable.
+     */
+    public function email()
+    {
+    }
+
+    /**
+     * url type editable.
+     */
+    public function url()
+    {
+    }
+
+    /**
+     * Tel type editable.
+     */
+    public function tel()
+    {
+    }
+
+    /**
+     * Time type editable.
+     */
+    public function time()
+    {
+    }
+
+    /**
+     * Number type editable.
+     */
+    public function number()
+    {
+    }
+
+    /**
      * Text type editable.
      */
     public function text()
