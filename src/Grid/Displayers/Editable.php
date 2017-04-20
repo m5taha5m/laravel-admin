@@ -36,13 +36,6 @@ class Editable extends AbstractDisplayer
     }
 
     /**
-     * Number type editable.
-     */
-    public function number()
-    {
-    }
-
-    /**
      * Text type editable.
      */
     public function text()
