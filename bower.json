@@ -1,0 +1,22 @@
+{
+  "name": "laravel-admin",
+  "homepage": "https://github.com/m5taha5m/laravel-admin",
+  "authors": [
+    "MTM <m5taha5m@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "admin-lte": "git://github.com/m5taha5m/AdminLTE.git#mtm",
+    "jquery-pjax": "^1.9.6"
+  }
+}
