@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAY;EACR,KAAK,EAAE,eAAe;;;AAG1B,UAAW;EACP,KAAK,EAAE,gBAAgB;;;AAG3B,WAAY;EACR,KAAK,EAAE,gBAAgB;;;AAG3B,SAAU;EACN,KAAK,EAAE,eAAe",
+"sources": ["../../build/sass/bootstrap-rtl.scss"],
+"names": [],
+"file": "bootstrap-rtl.css"
+}

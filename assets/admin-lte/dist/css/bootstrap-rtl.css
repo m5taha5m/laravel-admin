@@ -1,0 +1,17 @@
+.pull-right {
+  float: left !important;
+}
+
+.pull-left {
+  float: right !important;
+}
+
+.pull-start {
+  float: right !important;
+}
+
+.pull-end {
+  float: left !important;
+}
+
+/*# sourceMappingURL=bootstrap-rtl.css.map */

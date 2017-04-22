@@ -7,25 +7,30 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link rel="stylesheet" href="{{ asset("/packages/admin/AdminLTE/bootstrap/css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/plugins/bootstrap/dist/css/bootstrap.min.css") }}">
+    <!-- Bootstrap RTL -->
+    @if (config('app.locale') == 'fa')
+    <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/plugins/bootstrap-rtl/dist/css/bootstrap-rtl.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/dist/css/bootstrap-rtl.css") }}">
+    @endif
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset("/packages/admin/font-awesome/css/font-awesome.min.css") }}">
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset("/packages/admin/AdminLTE/dist/css/skins/" . config('admin.skin') .".min.css") }}">
+    <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/dist/css/skins/" . config('admin.skin') .".min.css") }}">
 
     {!! Admin::css() !!}
     <link rel="stylesheet" href="{{ asset("/packages/admin/nestable/nestable.css") }}">
     <link rel="stylesheet" href="{{ asset("/packages/admin/toastr/build/toastr.min.css") }}">
     <link rel="stylesheet" href="{{ asset("/packages/admin/bootstrap3-editable/css/bootstrap-editable.css") }}">
     <link rel="stylesheet" href="{{ asset("/packages/admin/google-fonts/fonts.css") }}">
-    <link rel="stylesheet" href="{{ asset("/packages/admin/AdminLTE/dist/css/AdminLTE.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/dist/css/AdminLTE.min.css") }}">
 
     <!-- REQUIRED JS SCRIPTS -->
-    <script src="{{ asset ("/packages/admin/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js") }}"></script>
-    <script src="{{ asset ("/packages/admin/AdminLTE/bootstrap/js/bootstrap.min.js") }}"></script>
-    <script src="{{ asset ("/packages/admin/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js") }}"></script>
-    <script src="{{ asset ("/packages/admin/AdminLTE/dist/js/app.min.js") }}"></script>
+    <script src="{{ asset ("/packages/admin/admin-lte/plugins/jquery/dist/jquery.min.js") }}"></script>
+    <script src="{{ asset ("/packages/admin/admin-lte/plugins/bootstrap/dist/js/bootstrap.min.js") }}"></script>
+    <script src="{{ asset ("/packages/admin/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js") }}"></script>
+    <script src="{{ asset ("/packages/admin/admin-lte/dist/js/app.min.js") }}"></script>
     <script src="{{ asset ("/packages/admin/jquery-pjax/jquery.pjax.js") }}"></script>
 
     <!--[if lt IE 9]>
@@ -54,7 +59,7 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
-<script src="{{ asset ("/packages/admin/AdminLTE/plugins/chartjs/Chart.min.js") }}"></script>
+<script src="{{ asset ("/packages/admin/admin-lte/plugins/chartjs/Chart.min.js") }}"></script>
 <script src="{{ asset ("/packages/admin/nestable/jquery.nestable.js") }}"></script>
 <script src="{{ asset ("/packages/admin/toastr/build/toastr.min.js") }}"></script>
 <script src="{{ asset ("/packages/admin/bootstrap3-editable/js/bootstrap-editable.min.js") }}"></script>

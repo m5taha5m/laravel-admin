@@ -1,0 +1,45 @@
+{
+  "name": "admin-lte",
+  "homepage": "http://almsaeedstudio.com",
+  "authors": [
+    "Abdullah Almsaeed <abdullah@almsaeedstudio.com>"
+  ],
+  "description": "Admin dashboard and control panel template",
+  "main": [
+    "index2.html",
+    "dist/css/AdminLTE.css",
+    "dist/js/app.js",
+    "build/less/AdminLTE.less"
+  ],
+  "keywords": [
+    "css",
+    "js",
+    "html",
+    "template",
+    "admin",
+    "bootstrap",
+    "theme",
+    "backend",
+    "responsive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "*",
+    "!dist/**",
+    "!plugins/**"
+  ],
+  "dependencies": {
+    "bootstrap-rtl": "^3.4.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "_release": "2f9a74f9e6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "mtm",
+    "commit": "2f9a74f9e6a3416bd400e69b079bf44473b8904d"
+  },
+  "_source": "git://github.com/m5taha5m/AdminLTE.git",
+  "_target": "mtm",
+  "_originalSource": "git://github.com/m5taha5m/AdminLTE.git"
+}
