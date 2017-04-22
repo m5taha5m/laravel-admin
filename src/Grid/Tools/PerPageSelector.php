@@ -76,7 +76,7 @@ class PerPageSelector extends AbstractTool
 
         $show = trans('admin::lang.show');
         $entries = trans('admin::lang.entries');
-        $marginStyle = config('app.locale') == 'fa' ? 'margin-left: 10px' : 'margin-right: 10px';
+        $marginStyle = config('app.locale') == 'fa' ? 'margin-left: 10px;' : 'margin-right: 10px;';
 
         return <<<EOT
 
