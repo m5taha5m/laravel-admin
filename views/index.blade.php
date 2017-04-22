@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="{{ asset("/packages/admin/bootstrap3-editable/css/bootstrap-editable.css") }}">
     <link rel="stylesheet" href="{{ asset("/packages/admin/google-fonts/fonts.css") }}">
     <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/dist/css/AdminLTE.min.css") }}">
+    @if (config('app.locale') == 'fa')
+    <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/dist/css/adminlte-rtl.css") }}">
+    @endif
 
     <!-- REQUIRED JS SCRIPTS -->
     <script src="{{ asset ("/packages/admin/admin-lte/plugins/jquery/dist/jquery.min.js") }}"></script>
