@@ -76,10 +76,11 @@ class PerPageSelector extends AbstractTool
 
         $show = trans('admin::lang.show');
         $entries = trans('admin::lang.entries');
+        $marginStyle = config('app.locale') == 'fa' ? 'margin-left: 10px' : 'margin-right: 10px';
 
         return <<<EOT
 
-<label class="control-label pull-right" style="margin-right: 10px; font-weight: 100;">
+<label class="control-label pull-right" style="$marginStyle font-weight: 100;">
 
         <small>$show</small>&nbsp;
         <select class="input-sm grid-per-pager" name="per-page">
