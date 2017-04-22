@@ -7,7 +7,7 @@ class Ip extends Text
     protected $rules = 'ip';
 
     protected static $js = [
-        '/packages/admin/AdminLTE/plugins/input-mask/jquery.inputmask.bundle.min.js',
+        '/packages/admin/admin-lte/plugins/input-mask/jquery.inputmask.bundle.min.js',
     ];
 
     /**

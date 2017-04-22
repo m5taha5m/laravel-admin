@@ -17,7 +17,7 @@ trait AdminPermission
             return rtrim(config('admin.upload.host'), '/').'/'.trim($avatar, '/');
         }
 
-        return asset('/packages/admin/AdminLTE/dist/img/user2-160x160.jpg');
+        return asset('/packages/admin/admin-lte/dist/img/user2-160x160.jpg');
     }
 
     /**

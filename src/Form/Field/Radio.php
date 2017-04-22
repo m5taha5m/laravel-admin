@@ -8,11 +8,11 @@ use Illuminate\Contracts\Support\Arrayable;
 class Radio extends Field
 {
     protected static $css = [
-        '/packages/admin/AdminLTE/plugins/iCheck/all.css',
+        '/packages/admin/admin-lte/plugins/iCheck/all.css',
     ];
 
     protected static $js = [
-        'packages/admin/AdminLTE/plugins/iCheck/icheck.min.js',
+        'packages/admin/admin-lte/plugins/iCheck/icheck.min.js',
     ];
 
     /**
