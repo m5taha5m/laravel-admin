@@ -31,13 +31,14 @@
   "dependencies": {
     "bootstrap-rtl": "^3.4.0",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "Inputmask": "jquery.inputmask#^3.3.5"
   },
-  "_release": "2f9a74f9e6",
+  "_release": "e47961e88d",
   "_resolution": {
     "type": "branch",
     "branch": "mtm",
-    "commit": "2f9a74f9e6a3416bd400e69b079bf44473b8904d"
+    "commit": "e47961e88d2b28c9a3bf1ee461abbdb84d834a5e"
   },
   "_source": "git://github.com/m5taha5m/AdminLTE.git",
   "_target": "mtm",
