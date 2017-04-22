@@ -43,7 +43,7 @@
 
 </head>
 
-<body class="hold-transition {{config('admin.skin')}} {{join(' ', config('admin.layout'))}}">
+<body class="hold-transition {{config('admin.skin')}} {{join(' ', config('admin.layout'))}}" {{config('app.locale') == 'fa' ? 'dir="rtl"' : ''}}>
 <div class="wrapper">
 
     @include('admin::partials.header')
