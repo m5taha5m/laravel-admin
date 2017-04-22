@@ -13,9 +13,9 @@
 
                 <div class="form-group">
 
-                    <label for="inputTableName" class="col-sm-1 pull-left control-label">Table name</label>
+                    <label for="inputTableName" class="col-sm-1 control-label" style="float: left !important;">Table name</label>
 
-                    <div class="col-sm-4 pull-left">
+                    <div class="col-sm-4" style="float: left !important;">
                         <input type="text" name="table_name" class="form-control" id="inputTableName" placeholder="table name" value="{{ old('table_name') }}">
                     </div>
 
@@ -25,23 +25,23 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="inputModelName" class="col-sm-1 pull-left control-label">Model</label>
+                    <label for="inputModelName" class="col-sm-1 control-label" style="float: left !important;">Model</label>
 
-                    <div class="col-sm-4 pull-left">
+                    <div class="col-sm-4" style="float: left !important;">
                         <input type="text" name="model_name" class="form-control" id="inputModelName" placeholder="model" value="{{ old('model_name', "App\\Models\\") }}">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputControllerName" class="col-sm-1 pull-left control-label">Controller</label>
+                    <label for="inputControllerName" class="col-sm-1 control-label" style="float: left !important;">Controller</label>
 
-                    <div class="col-sm-4 pull-left">
+                    <div class="col-sm-4" style="float: left !important;">
                         <input type="text" name="controller_name" class="form-control" id="inputControllerName" placeholder="controller" value="{{ old('controller_name', "App\\Admin\\Controllers\\") }}">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-1 col-sm-11 pull-left">
+                    <div class="col-sm-offset-1 col-sm-11" style="float: left !important;">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" checked value="migration" name="create[]" /> Create migration
