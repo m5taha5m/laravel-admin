@@ -1,4 +1,4 @@
-<div class="box box-primary">
+<div class="box box-primary" dir="ltr">
     <div class="box-header with-border">
         <h3 class="box-title">Scaffold</h3>
     </div>
@@ -13,9 +13,9 @@
 
                 <div class="form-group">
 
-                    <label for="inputTableName" class="col-sm-1 control-label">Table name</label>
+                    <label for="inputTableName" class="col-sm-1 pull-left control-label">Table name</label>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 pull-left">
                         <input type="text" name="table_name" class="form-control" id="inputTableName" placeholder="table name" value="{{ old('table_name') }}">
                     </div>
 
@@ -25,23 +25,23 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="inputModelName" class="col-sm-1 control-label">Model</label>
+                    <label for="inputModelName" class="col-sm-1 pull-left control-label">Model</label>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 pull-left">
                         <input type="text" name="model_name" class="form-control" id="inputModelName" placeholder="model" value="{{ old('model_name', "App\\Models\\") }}">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputControllerName" class="col-sm-1 control-label">Controller</label>
+                    <label for="inputControllerName" class="col-sm-1 pull-left control-label">Controller</label>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 pull-left">
                         <input type="text" name="controller_name" class="form-control" id="inputControllerName" placeholder="controller" value="{{ old('controller_name', "App\\Admin\\Controllers\\") }}">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-1 col-sm-11">
+                    <div class="col-sm-offset-1 col-sm-11 pull-left">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" checked value="migration" name="create[]" /> Create migration
@@ -68,13 +68,13 @@
                 <table class="table table-hover" id="table-fields">
                     <tbody>
                     <tr>
-                        <th style="width: 200px">Field name</th>
-                        <th>Type</th>
-                        <th>Nullable</th>
-                        <th>Key</th>
-                        <th>Default value</th>
-                        <th>Comment</th>
-                        <th>Action</th>
+                        <th class="text-left" style="width: 200px">Field name</th>
+                        <th class="text-left">Type</th>
+                        <th class="text-left">Nullable</th>
+                        <th class="text-left">Key</th>
+                        <th class="text-left">Default value</th>
+                        <th class="text-left">Comment</th>
+                        <th class="text-left">Action</th>
                     </tr>
 
                     @if(old('fields'))
