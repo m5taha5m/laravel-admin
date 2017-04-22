@@ -28,10 +28,11 @@ class ExportButton extends AbstractTool
         }
 
         $export = trans('admin::lang.export');
+        $marginStyle = config('app.locale') == 'fa' ? 'margin-left: 10px' : 'margin-right: 10px';
 
         return <<<EOT
 
-<div class="btn-group pull-right" style="margin-right: 10px">
+<div class="btn-group pull-right" style="$marginStyle">
     <a href="{$this->grid->exportUrl()}" target="_blank" class="btn btn-sm btn-twitter">
         <i class="fa fa-download"></i>&nbsp;&nbsp;{$export}
     </a>

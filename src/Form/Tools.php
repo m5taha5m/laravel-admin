@@ -59,9 +59,10 @@ EOT;
         Admin::script($script);
 
         $text = trans('admin::lang.back');
+        $marginStyle = config('app.locale') == 'fa' ? 'margin-left: 10px' : 'margin-right: 10px';
 
         return <<<EOT
-<div class="btn-group pull-right" style="margin-right: 10px">
+<div class="btn-group pull-right" style="$marginStyle">
     <a class="btn btn-sm btn-default form-history-back"><i class="fa fa-arrow-left"></i>&nbsp;$text</a>
 </div>
 EOT;
@@ -73,9 +74,10 @@ EOT;
         $resource = $this->form->getResource($slice);
 
         $text = trans('admin::lang.list');
+        $marginStyle = config('app.locale') == 'fa' ? 'margin-left: 10px' : 'margin-right: 10px';
 
         return <<<EOT
-<div class="btn-group pull-right" style="margin-right: 10px">
+<div class="btn-group pull-right" style="$marginStyle">
     <a href="$resource" class="btn btn-sm btn-default"><i class="fa fa-list"></i>&nbsp;$text</a>
 </div>
 EOT;
@@ -115,9 +117,10 @@ $('.form-delete-btn').unbind('click').click(function() {
 SCRIPT;
 
         Admin::script($script);
+        $marginStyle = config('app.locale') == 'fa' ? 'margin-left: 10px' : 'margin-right: 10px';
 
         return <<<EOT
-<div class="btn-group pull-right" style="margin-right: 10px">
+<div class="btn-group pull-right" style="$marginStyle">
     <a href="javascript:void(0);" data-id="{$this->form->getResourceId()}" class="btn btn-sm btn-danger form-delete-btn">
         <i class="fa fa-trash"></i>&nbsp;$text
     </a>
