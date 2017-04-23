@@ -62,6 +62,7 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
+<script src="{{ asset ("/packages/admin/jquery-migrate-3.min.js") }}"></script>
 <script src="{{ asset ("/packages/admin/admin-lte/plugins/chartjs/Chart.min.js") }}"></script>
 <script src="{{ asset ("/packages/admin/nestable/jquery.nestable.js") }}"></script>
 <script src="{{ asset ("/packages/admin/toastr/build/toastr.min.js") }}"></script>
