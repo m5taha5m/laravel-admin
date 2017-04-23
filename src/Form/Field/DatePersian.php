@@ -29,7 +29,12 @@ class DatePersian extends Text
         $this->script = <<<EOT
 $('{$this->getElementClassSelector()}:not(.initialized)')
     .addClass('initialized')
-    .pDatepicker();
+    .pDatepicker({
+        format: 'YYYY-MM-DD',
+        formatter: function(t) {
+            return (new Date(t)).toISOString().slice(0, 10);
+        }
+    });
 EOT;
 
         return parent::render();

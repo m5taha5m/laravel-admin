@@ -895,9 +895,10 @@ class Grid
             'checkbox'      => \Encore\Admin\Grid\Displayers\Checkbox::class,
             'orderable'     => \Encore\Admin\Grid\Displayers\Orderable::class,
             'expandRow'     => \Encore\Admin\Grid\Displayers\ExpandRow::class,
-            'openMap'      => \Encore\Admin\Grid\Displayers\OpenMap::class,
-            'floatBar'     => \Encore\Admin\Grid\Displayers\FloatBar::class,
-            'urlWrapper'   => \Encore\Admin\Grid\Displayers\UrlWrapper::class,
+            'openMap'       => \Encore\Admin\Grid\Displayers\OpenMap::class,
+            'floatBar'      => \Encore\Admin\Grid\Displayers\FloatBar::class,
+            'urlWrapper'    => \Encore\Admin\Grid\Displayers\UrlWrapper::class,
+            'persianDate'   => \Encore\Admin\Grid\Displayers\DatePersian::class,
         ];
 
         foreach ($map as $abstract => $class) {

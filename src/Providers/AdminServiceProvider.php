@@ -72,10 +72,15 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // Registering jalali-calendar service-provider
+        $this->app->register('Morilog\Jalali\JalaliServiceProvider::class');
+
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
 
             $loader->alias('Admin', \Encore\Admin\Facades\Admin::class);
+            // Registering jalali-calendar facade
+            $loader->alias('jDate', Morilog\Jalali\Facades\jDate::class);
 
             if (is_null(config('auth.guards.admin'))) {
                 $this->setupAuth();
