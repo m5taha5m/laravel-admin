@@ -17,8 +17,8 @@ class Number extends Text
 $('{$this->getElementClassSelector()}:not(.initialized)')
     .addClass('initialized')
     .bootstrapNumber({
-        upClass: 'success',
-        downClass: 'primary',
+        upClass: 'default',
+        downClass: 'default',
         center: true
     });
 

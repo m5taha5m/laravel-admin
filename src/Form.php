@@ -42,6 +42,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @method Field\File           file($column, $label = '')
  * @method Field\Image          image($column, $label = '')
  * @method Field\Date           date($column, $label = '')
+ * @method Field\DatePersian    persianDate($column, $label = '')
  * @method Field\Datetime       datetime($column, $label = '')
  * @method Field\Time           time($column, $label = '')
  * @method Field\Year           year($column, $label = '')
@@ -1120,6 +1121,7 @@ class Form
             'color'             => \Encore\Admin\Form\Field\Color::class,
             'currency'          => \Encore\Admin\Form\Field\Currency::class,
             'date'              => \Encore\Admin\Form\Field\Date::class,
+            'persianDate'       => \Encore\Admin\Form\Field\DatePersian::class,
             'dateRange'         => \Encore\Admin\Form\Field\DateRange::class,
             'datetime'          => \Encore\Admin\Form\Field\Datetime::class,
             'dateTimeRange'     => \Encore\Admin\Form\Field\DatetimeRange::class,

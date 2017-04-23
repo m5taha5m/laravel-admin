@@ -28,8 +28,7 @@ class Ip extends Text
 $('{$this->getElementClassSelector()}').inputmask($options);
 EOT;
 
-        $this->prepend('<i class="fa fa-laptop"></i>')
-            ->defaultAttribute('style', 'width: 130px');
+        $this->prepend('<i class="fa fa-laptop"></i>');
 
         return parent::render();
     }
