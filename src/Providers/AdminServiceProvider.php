@@ -73,7 +73,7 @@ class AdminServiceProvider extends ServiceProvider
     public function register()
     {
         // Registering jalali-calendar service-provider
-        $this->app->register('Morilog\Jalali\JalaliServiceProvider::class');
+        $this->app->register('Morilog\Jalali\JalaliServiceProvider');
 
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
