@@ -31,6 +31,7 @@ use Illuminate\Contracts\Support\Renderable;
  * @method Field\Date           date($name, $label = '')
  * @method Field\DatePersian    persianDate($name, $label = '')
  * @method Field\Datetime       datetime($name, $label = '')
+ * @method Field\DateTimePersian persianDateTime($name, $label = '')
  * @method Field\Time           time($name, $label = '')
  * @method Field\DateRange      dateRange($start, $end, $label = '')
  * @method Field\DateTimeRange  dateTimeRange($start, $end, $label = '')

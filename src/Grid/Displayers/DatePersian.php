@@ -6,6 +6,6 @@ class DatePersian extends AbstractDisplayer
 {
     public function display()
     {
-        return jdate($this->value)->format('date');
+        return jdate($this->value)->format('%e %B %Y');
     }
 }

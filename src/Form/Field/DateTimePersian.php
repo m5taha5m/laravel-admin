@@ -2,7 +2,7 @@
 
 namespace Encore\Admin\Form\Field;
 
-class DatePersian extends Text
+class DateTimePersian extends DatePersian
 {
     protected static $css = [
         '/packages/admin/admin-lte/plugins/persian-datepicker/dist/css/persian-datepicker.min.css',
@@ -12,7 +12,11 @@ class DatePersian extends Text
         '/packages/admin/admin-lte/plugins/persian-datepicker/dist/js/persian-datepicker.min.js',
     ];
     protected static $options = '{
-        format: "YYYY-MM-DD",
+        format: "YYYY-MM-DD HH:mm",
+        timePicker: {
+            enabled: true,
+            showSeconds: false,
+        }
         formatter: function(t) {
             return (new Date(t)).toISOString().slice(0, 10);
         }
