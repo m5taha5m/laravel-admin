@@ -32,7 +32,7 @@ class DatePersian extends Text
         $this->prepend('<i class="fa fa-calendar"></i>')
             ->defaultAttribute('data-pdatepicker', 'pdatepicker');
 
-        $append = empty($this->value) ? '.val("")' : '';
+        $append = strpos(parent::rules(), 'required') === false && empty($this->value) ? '.val("")' : '';
 
         $this->script = <<<EOT
 $('{$this->getElementClassSelector()}:not(.initialized)')

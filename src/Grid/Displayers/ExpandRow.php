@@ -32,12 +32,13 @@ EOT;
         Admin::script($script);
 
         $btn = $btn ?: $this->column->getName();
+        $btn = config('app.locale') == 'fa' ? $btn.' <i class="fa fa-caret-left"></i>' : '<i class="fa fa-caret-right"></i> '.$btn;
 
         $key = $this->getKey();
 
         return <<<EOT
 <a class="btn btn-xs btn-default grid-expand" data-inserted="0" data-key="{$key}" data-toggle="collapse" data-target="#grid-collapse-{$key}">
-    <i class="fa fa-caret-right"></i> $btn
+    $btn
 </a>
 <template class="grid-expand-{$key}">
     <div id="grid-collapse-{$key}" class="collapse">$html</div>
