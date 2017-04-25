@@ -22,7 +22,8 @@ class Date extends Text
     {
         $this->prepend('<i class="fa fa-calendar"></i>')
             ->defaultAttribute('data-provide', 'datepicker')
-            ->defaultAttribute('data-date-format', $this->format);
+            ->defaultAttribute('data-date-format', $this->format)
+            ->defaultAttribute('data-date-today-btn', 'true');
 
         return parent::render();
     }

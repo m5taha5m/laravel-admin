@@ -686,7 +686,6 @@ var TEMPLATE = {
         "<div class='down-btn' >&#9660;</div>" + //
         "</div>" + //
         "<div class='divider meridian-divider' ></div>" + //
-        "<div class='divider meridian-divider' ></div>" + //
         "<div class='meridian time-segment' data-time-key='meridian' >" + //
         "<div class='up-btn' >&#9650;</div>" + //
         "<input type='text' placeholder='meridian&' class='meridian-input' />" + //

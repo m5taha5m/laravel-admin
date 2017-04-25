@@ -4,44 +4,24 @@ namespace Encore\Admin\Form\Field;
 
 class DateTimePersian extends DatePersian
 {
-    protected static $css = [
-        '/packages/admin/admin-lte/plugins/persian-datepicker/dist/css/persian-datepicker.min.css',
-    ];
-    protected static $js = [
-        '/packages/admin/admin-lte/plugins/persian-date/dist/persian-date.min.js',
-        '/packages/admin/admin-lte/plugins/persian-datepicker/dist/js/persian-datepicker.min.js',
-    ];
-    protected static $options = '{
+    protected $options = '{
         format: "YYYY-MM-DD HH:mm",
         timePicker: {
             enabled: true,
             showSeconds: false,
-        }
+        },
         formatter: function(t) {
-            return (new Date(t)).toISOString().slice(0, 10);
+            var t = new Date(t);
+            var y = t.getFullYear();
+            var M = t.getMonth()+1;
+            M = M >= 10 ? M : "0"+M;
+            var d = t.getDate();
+            d = d >= 10 ? d : "0"+d;
+            var h = t.getHours();
+            h = h >= 10 ? h : "0"+h;
+            var m = t.getMinutes();
+            m = m >= 10 ? m : "0"+m;
+            return y+"-"+M+"-"+d+" "+h+":"+m;
         }
     }';
-
-    public function prepare($value)
-    {
-        if ($value === '') {
-            $value = null;
-        }
-
-        return $value;
-    }
-
-    public function render()
-    {
-        $this->prepend('<i class="fa fa-calendar"></i>')
-            ->defaultAttribute('data-pdatepicker', 'pdatepicker');
-
-        $this->script = <<<EOT
-$('{$this->getElementClassSelector()}:not(.initialized)')
-    .addClass('initialized')
-    .pDatepicker($options);
-EOT;
-
-        return parent::render();
-    }
 }

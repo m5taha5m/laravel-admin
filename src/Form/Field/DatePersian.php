@@ -11,7 +11,7 @@ class DatePersian extends Text
         '/packages/admin/admin-lte/plugins/persian-date/dist/persian-date.min.js',
         '/packages/admin/admin-lte/plugins/persian-datepicker/dist/js/persian-datepicker.min.js',
     ];
-    protected static $options = '{
+    protected $options = '{
         format: "YYYY-MM-DD",
         formatter: function(t) {
             return (new Date(t)).toISOString().slice(0, 10);
@@ -32,10 +32,12 @@ class DatePersian extends Text
         $this->prepend('<i class="fa fa-calendar"></i>')
             ->defaultAttribute('data-pdatepicker', 'pdatepicker');
 
+        $append = empty($this->value) ? '.val("")' : '';
+
         $this->script = <<<EOT
 $('{$this->getElementClassSelector()}:not(.initialized)')
     .addClass('initialized')
-    .pDatepicker($options);
+    .pDatepicker({$this->options}){$append};
 EOT;
 
         return parent::render();
