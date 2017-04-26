@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="{{ asset("/packages/admin/font-awesome/css/font-awesome.min.css") }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/dist/css/AdminLTE.min.css") }}">
+  @if (config('app.locale') == 'fa')
+  <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/dist/css/adminlte-rtl.css") }}">
+  @endif
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ asset("/packages/admin/admin-lte/plugins/iCheck/square/blue.css") }}">
 
