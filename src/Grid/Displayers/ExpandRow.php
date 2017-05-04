@@ -26,7 +26,7 @@ $('.grid-expand').on('click', function () {
         $(this).data('inserted', 1);
     }
 
-    $("i", this).toggleClass("fa-caret-right fa-caret-down");
+    $("i", this).toggleClass("fa-caret-left fa-caret-down");
 });
 EOT;
         Admin::script($script);

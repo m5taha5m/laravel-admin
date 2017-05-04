@@ -139,6 +139,13 @@ class Grid
     public $perPage = 20;
 
     /**
+     * Default title for grid's box
+     *
+     * @var String
+     */
+    public $title = '';
+
+    /**
      * Header tools.
      *
      * @var Tools
@@ -350,6 +357,18 @@ class Grid
         $this->perPage = $perPage;
 
         $this->model()->paginate($perPage);
+    }
+
+    /**
+     * Set the title of Grid
+     *
+     * @param string $title
+     *
+     * @return void
+     */
+    public function title($title)
+    {
+        $this->title = $title;
     }
 
     /**

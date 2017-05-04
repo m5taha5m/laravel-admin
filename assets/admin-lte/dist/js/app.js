@@ -770,3 +770,15 @@ function _init() {
     });
   };
 }(jQuery));
+
+/*
+ * MTM Added features
+ * ------------------
+ * Auto-load iCheck if checkbox/radio has iCheck class
+ */
+jQuery(document).ready(function($) {
+
+  'use strict';
+
+  $('input.icheck[type="checkbox"], input.icheck[type="radio"]').iCheck({checkboxClass:'icheckbox_minimal-blue'});
+});
