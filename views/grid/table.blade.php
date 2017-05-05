@@ -9,9 +9,9 @@
             {!! $grid->renderCreateButton() !!}
         </div>
 
-        <div class="box-tools">
+        <span>
             {!! $grid->renderHeaderTools() !!}
-        </div>
+        </span>
 
     </div>
     <!-- /.box-header -->
