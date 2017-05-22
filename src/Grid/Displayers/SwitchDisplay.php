@@ -64,7 +64,7 @@ EOT;
 
         $key = $this->row->{$this->grid->getKeyName()};
 
-        $checked = $this->states['on']['value'] == $this->value ? 'checked' : '';
+        $checked = $this->states['off']['value'] == $this->value ? '' : 'checked';
 
         return <<<EOT
         <input type="checkbox" class="$class" $checked data-key="$key" />

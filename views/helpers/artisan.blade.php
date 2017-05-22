@@ -127,14 +127,14 @@ $(function () {
         <!-- /.item -->
     </div>
     <!-- /.chat -->
-    <div class="box-footer with-border">
+    <div class="box-footer with-border" dir="ltr">
 
         <div style="margin-bottom: 10px;">
 
             @foreach($commands['groups'] as $group => $command)
             <div class="btn-group dropup">
-                <button type="button" class="btn btn-default btn-flat">{{ $group }}</button>
-                <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn btn-default btn-flat btn-sm">{{ $group }}</button>
+                <button type="button" class="btn btn-default btn-flat btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <span class="caret"></span>
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
@@ -147,8 +147,8 @@ $(function () {
             @endforeach
 
             <div class="btn-group dropup">
-                <button type="button" class="btn btn-twitter btn-flat">Other</button>
-                <button type="button" class="btn btn-twitter btn-flat dropdown-toggle" data-toggle="dropdown">
+                <button type="button" class="btn btn-twitter btn-flat btn-sm">Other</button>
+                <button type="button" class="btn btn-twitter btn-flat btn-sm dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
@@ -159,9 +159,9 @@ $(function () {
                 </ul>
             </div>
 
-            <button type="button" class="btn btn-success" id="terminal-send"><i class="fa fa-paper-plane"></i> send</button>
+            <button type="button" class="btn btn-sm btn-success" id="terminal-send"><i class="fa fa-paper-plane"></i> send</button>
 
-            <button type="button" class="btn btn-warning" id="terminal-clear"><i class="fa fa-refresh"></i> clear</button>
+            <button type="button" class="btn btn-sm btn-warning" id="terminal-clear"><i class="fa fa-refresh"></i> clear</button>
         </div>
 
         <div class="input-group">
