@@ -25,7 +25,7 @@ class Line extends Chart
 
     public function script()
     {
-        $options = json_encode($this->options);
+        $options = json_encode($this->options + ['responsive' => true, 'maintainAspectRatio' => false]);
 
         return <<<EOT
 
