@@ -114,6 +114,42 @@ EOT;
         Admin::script($script);
     }
 
+    public function persianDate($options = [])
+    {
+        $this->view = 'admin::filter.betweenDatetime';
+
+        $options['format'] = array_get($options, 'format', 'YYYY-MM-DD');
+        $options['locale'] = array_get($options, 'locale', config('app.locale'));
+        $options['formatter'] = array_get($options, 'formatter', '#!!function(t) {return (new Date(t)).toISOString().slice(0, 10);}!!#');
+
+        $startOptions = json_encode($options);
+        $startOptions = str_replace('"#!!','',$startOptions);
+        $startOptions = str_replace('!!#"','',$startOptions);
+
+        $endOptions = json_encode($options);
+        $endOptions = str_replace('"#!!','',$endOptions);
+        $endOptions = str_replace('!!#"','',$endOptions);
+
+        $script = <<<EOT
+            $('#{$this->id['start']}:not(.initialized)')
+                .addClass('initialized')
+                .pDatepicker($startOptions);
+
+            $('#{$this->id['end']}:not(.initialized)')
+                .addClass('initialized')
+                .pDatepicker($endOptions);
+
+            $("#{$this->id['start']}").on("dp.change", function (e) {
+                $('#{$this->id['end']}').data("DateTimePicker").minDate(e.date);
+            });
+            $("#{$this->id['end']}").on("dp.change", function (e) {
+                $('#{$this->id['start']}').data("DateTimePicker").maxDate(e.date);
+            });
+EOT;
+
+        Admin::script($script);
+    }
+
     public function render()
     {
         if (isset($this->view)) {
