@@ -67,7 +67,11 @@ class Line extends Chart
 
 (function(){
     var canvas = $("#{$this->elementId}").get(0).getContext("2d");
-    var chart = new Chart(canvas).Line($data, $options);
+    var chart = new Chart(canvas, {
+        type: 'line',
+        data: $data,
+        options: $options
+    });
 })();
 EOT;
     }
