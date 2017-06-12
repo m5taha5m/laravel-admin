@@ -11,7 +11,12 @@ class Chart extends Widget implements Renderable
 {
     protected $elementId = '';
 
-    protected $options = [];
+    protected $options = [
+        'legend' => [
+            'labels' => [
+                'fontFamily' => 'IRANSans']
+            ]
+        ];
 
     protected $data = [];
 
