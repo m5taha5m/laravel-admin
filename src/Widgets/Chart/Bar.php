@@ -65,7 +65,7 @@ class Bar extends Chart
 
         $data = json_encode($data);
 
-        $options = json_encode($this->options);
+        $options = json_encode($this->options + ['responsive' => true, 'maintainAspectRatio' => false]);
 
         return <<<EOT
 
