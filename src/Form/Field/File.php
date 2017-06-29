@@ -129,7 +129,7 @@ class File extends Field
      */
     protected function preview()
     {
-        return $this->objectUrl($this->value);
+        return url($this->objectUrl($this->value));
     }
 
     /**
