@@ -2,23 +2,21 @@
 
 namespace Encore\Admin\Controllers;
 
-use \Illuminate\Http;
-
 trait ModelForm
 {
-    public function show(Request $request)
+    public function show($id)
     {
-        return $this->edit($this->getRouteId($request));
+        return $this->edit($id);
     }
 
-    public function update(Request $request)
+    public function update($id)
     {
-        return $this->form()->update($this->getRouteId($request));
+        return $this->form()->update($id);
     }
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        if ($this->form()->destroy($this->getRouteId($request))) {
+        if ($this->form()->destroy($id)) {
             return response()->json([
                 'status'  => true,
                 'message' => trans('admin::lang.delete_succeeded'),
@@ -34,11 +32,5 @@ trait ModelForm
     public function store()
     {
         return $this->form()->store();
-    }
-    
-    protected function getRouteId(Request $request)
-    {
-        $t = $request->route()->parameters();
-        return end($t);
     }
 }
