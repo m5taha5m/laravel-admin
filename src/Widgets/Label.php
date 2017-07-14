@@ -17,27 +17,19 @@ class Label extends Widget implements Renderable
     protected $content = 'here is the label content.';
 
     /**
-     * @var string
-     */
-    protected $style = 'label-default';
-
-    /**
      * Label constructor.
      *
      * @param string $content
      * @param string|array $style
      */
-    public function __construct($content = '', $style = '')
+    public function __construct($content = '', $style = 'default')
     {
         if ($content) {
             $this->content($content);
         }
 
-        if ($style) {
-            $this->style($style);
-        }
-
         $this->class('label');
+        $this->style($style);
     }
 
     /**
@@ -59,7 +51,7 @@ class Label extends Widget implements Renderable
     }
 
     /**
-     * Set box style.
+     * Set label style.
      *
      * @param string $styles
      *
@@ -94,7 +86,7 @@ class Label extends Widget implements Renderable
     }
 
     /**
-     * Render box.
+     * Render label.
      *
      * @return string
      */
