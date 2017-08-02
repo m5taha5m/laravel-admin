@@ -24,6 +24,9 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Schema;
 use Jenssegers\Mongodb\Eloquent\Model as MongodbModel;
 
+/**
+ * @property function $image This column should shown as an image
+ */
 class Grid
 {
     /**
