@@ -3,13 +3,13 @@
 
         <h3 class="box-title">{!! $grid->title !!}</h3>
 
-        <div class="box-tools pull-right">
+        <div class="pull-right">
             {!! $grid->renderFilter() !!}
-            {!! $grid->renderExportButton() !!}
-            {!! $grid->renderCreateButton() !!}
         </div>
 
         <span>
+            {!! $grid->renderExportButton() !!}
+            {!! $grid->renderCreateButton() !!}
             {!! $grid->renderHeaderTools() !!}
         </span>
 
