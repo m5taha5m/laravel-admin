@@ -134,7 +134,7 @@ class Actions extends AbstractDisplayer
     {
         return <<<EOT
 <a href="{$this->getResource()}/{$this->getKey()}/edit" class="btn btn-xs btn-default">
-    <i class="fa fa-edit"></i>
+    <i class="fa fa-edit"></i> ویرایش
 </a> 
 EOT;
     }
